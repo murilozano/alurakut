@@ -17,7 +17,7 @@ function ProfireSidebar(props) {
       />
       <hr />
       <p>
-        <a className="boxLink" href={`https://github.com/${props.githubUser}`}>
+        <a className="boxLink" href={`https://github.com/${props.githubUser}`} >
           @{props.githubUser}
         </a>
       </p>
@@ -30,7 +30,8 @@ export default function Home() {
   const [comunidades, setComunidades] = React.useState([{
     id: '12121316546543131',
     title: "Eu odeio acordar cedo",
-    image: "https://alurakut.vercel.app/capa-comunidade-01.jpg"
+    image: "https://alurakut.vercel.app/capa-comunidade-01.jpg",
+    
   }]);
 
   const githubUser = "murilozano";
@@ -47,7 +48,7 @@ export default function Home() {
 
   return (
     <div>
-      <AlurakutMenu />
+      <AlurakutMenu  githubUser={githubUser}/>
       <MainGrid>
         <div className="profileArea" style={{ gridArea: "profileArea" }}>
           <ProfireSidebar githubUser={githubUser} />
@@ -101,7 +102,7 @@ export default function Home() {
               {pessoasFavoritas.map((itemAtual) => {
                 return (
                   <li key={itemAtual}>
-                    <a href={`/users/${itemAtual}`}>
+                    <a href={`https://github.com/${itemAtual}`}  target="_blank">
                       <img src={`https://github.com/${itemAtual}.png`} />
                       <span>{itemAtual}</span>
                     </a>
